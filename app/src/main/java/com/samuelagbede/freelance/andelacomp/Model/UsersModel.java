@@ -33,13 +33,7 @@ public class UsersModel implements Serializable{
     public UsersModel(){
 
     }
-
-    public UsersModel(int user_id, String username, String image_url, String profile_url){
-        this.username = username;
-        this.image_url = image_url;
-        this.profile_url = profile_url;
-        this.user_id = user_id;
-    }
+    
 
     public int getUser_id() {
         return user_id;
