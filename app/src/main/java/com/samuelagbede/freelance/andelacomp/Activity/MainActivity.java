@@ -24,6 +24,8 @@ import com.samuelagbede.freelance.andelacomp.Adapter.ListAdapter;
 import com.samuelagbede.freelance.andelacomp.Model.UsersModel;
 import com.samuelagbede.freelance.andelacomp.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 ImageView original_imageview = (ImageView) view.findViewById(R.id.user_image);
                 dialog.show();
 
-                TextView textView = (TextView) dialog.findViewById(R.id.user_name);
+                TextView textUsername = (TextView) dialog.findViewById(R.id.user_name);
+                TextView textUserUrl = (TextView) dialog.findViewById(R.id.user_url);
                 ImageView imageView = (ImageView)dialog.findViewById(R.id.user_image);
                 Button share = (Button)dialog.findViewById(R.id.share);
 
@@ -78,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
                 SpannableString spannableString = new SpannableString(github_url);
                 Linkify.addLinks(spannableString, Linkify.WEB_URLS);
-                textView.setText("Github url : "+ github_url);
-                textView.setOnClickListener(new View.OnClickListener() {
+                textUsername.setText(username);
+                textUserUrl.setText(github_url);
+                textUserUrl.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent share = new Intent(Intent.ACTION_VIEW);
@@ -96,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-                dialog.setTitle(username);
 
             }
         });
