@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,11 +28,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 
 public class ListAdapter extends ArrayAdapter<UsersModel> implements Filterable {
-    Context context;
-    ArrayList<UsersModel> usersModels;
-    ArrayList<UsersModel> originalUsersModels;
-    LayoutInflater layoutInflater;
-    AdapterFilter filter;
+    private Context context;
+    private ArrayList<UsersModel> usersModels;
+    private ArrayList<UsersModel> originalUsersModels;
+    private LayoutInflater layoutInflater;
+    private AdapterFilter filter;
 
 
     public ListAdapter(Context context, int resource, ArrayList<UsersModel> usersModels) {
@@ -69,7 +68,7 @@ public class ListAdapter extends ArrayAdapter<UsersModel> implements Filterable 
         if (convertView == null)
         {
             layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = layoutInflater.inflate(R.layout.individual_list, null, true);
+            v = layoutInflater.inflate(R.layout.individual_list, parent, true);
 
             CircleImageView imageView = (CircleImageView)v.findViewById(R.id.user_image);
             TextView userName = (TextView) v.findViewById(R.id.user_name);

@@ -23,15 +23,11 @@ import android.widget.TextView;
 import com.samuelagbede.freelance.andelacomp.Adapter.ListAdapter;
 import com.samuelagbede.freelance.andelacomp.Model.UsersModel;
 import com.samuelagbede.freelance.andelacomp.R;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ListAdapter listAdapter;
-    private ArrayList<String> usersModel;
-    private Toolbar toolbar;
+    Toolbar toolbar;
     private ArrayList<UsersModel> usersModelArrayList;
     private ListView listView;
     private AlertDialog dialog;
@@ -64,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
 
+
                 final String username = listAdapter.getItem(position).getUsername();
                 final String github_url = listAdapter.getItem(position).getProfile_url();
+
 
                 //Get reference to imageview from the clicked listview line
                 //This allows me get the drawable without having to try the network call to retrieve the image again.
