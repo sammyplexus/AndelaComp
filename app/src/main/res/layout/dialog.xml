@@ -2,11 +2,12 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
         <include
             android:id="@+id/include"
-            layout="@layout/individual_list"/>
+            layout="@layout/dialog_custom_view"/>
 
     <Button
         android:id="@+id/share"
@@ -15,8 +16,10 @@
         android:text="Share"
         android:layout_below="@id/include"
         android:layout_alignParentRight="true"
-        android:background="@null"
-        android:layout_alignParentEnd="true"/>
+        android:background="@drawable/button_background"
+        android:textColor="@color/cardview_light_background"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"/>
 
 
 </RelativeLayout>

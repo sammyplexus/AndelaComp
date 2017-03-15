@@ -16,10 +16,40 @@
         />
 
     <TextView
+        android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Loading user data"
         android:textSize="22sp"
         android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/snap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:text="Aww. Snap!!! Something is wrong"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="No internet access"
+        android:drawableLeft="@drawable/warning"
+        android:drawableTint="@color/colorAccent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Try again"
+        android:drawableLeft ="@drawable/retry"
+        android:padding="8dp"
+        android:visibility="gone"/>
 
 </LinearLayout>
